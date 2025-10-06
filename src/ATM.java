@@ -1,4 +1,5 @@
 public class ATM {
+
     private double balance;
     private double depositAmount;
     private double withDrawAmount;

@@ -1,7 +1,10 @@
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
+
+        AtmOperationInterf op = new AtmOpeartionImpl();
         int atmNumber = 12345;
         int atmPin = 123;
         Scanner scanner = new Scanner(System.in);
@@ -22,7 +25,7 @@ public class Main {
                     "1.View Available Balance\n" +
                     "2.Withdraw Amount\n" +
                     "3.Deposit Amount\n" +
-                    "4.View Ministatement\n" +
+                    "4.View MiniStatement\n" +
                     "5.Exit"
             );
             System.out.println("Enter Choice : ");
@@ -30,7 +33,7 @@ public class Main {
 
             switch (response) {
                 case 1:
-
+                    op.viewBalance();
                     break;
                 case 2:
 
