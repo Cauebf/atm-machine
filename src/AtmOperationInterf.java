@@ -1,3 +1,4 @@
+// interface defining ATM operations
 public interface AtmOperationInterf {
 
     public void viewBalance();

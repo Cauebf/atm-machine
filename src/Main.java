@@ -15,11 +15,13 @@ public class Main {
         System.out.print("Enter pin: ");
         int inputPin = scanner.nextInt();
 
+        // validating user credentials
         if ((atmNumber != inputNumber) || (atmPin != inputPin)) {
             System.out.println("Incorrect Atm Number or Pin");
-            System.exit(1);
+            System.exit(1); // exit if credentials are incorrect
         }
 
+        // displaying menu options in loop
         while (true) {
             System.out.println("\n*************************");
             System.out.print(
@@ -33,26 +35,27 @@ public class Main {
             System.out.print("Enter Choice: ");
             int response = scanner.nextInt();
 
+            // switch-case to handle user menu selection
             switch (response) {
                 case 1:
-                    op.viewBalance();
+                    op.viewBalance(); // display balance
                     break;
                 case 2:
                     System.out.print("Enter Amount to Withdraw: ");
                     double withdrawAmount = scanner.nextDouble();
-                    op.withDrawnAmount(withdrawAmount);
+                    op.withDrawnAmount(withdrawAmount); // withdraw money
                     break;
                 case 3:
                     System.out.print("Enter Amount to Deposit: ");
                     double depositAmount = scanner.nextDouble();
-                    op.depositAmount(depositAmount);
+                    op.depositAmount(depositAmount); // deposit money
                     break;
                 case 4:
-                    op.viewMiniStatement();
+                    op.viewMiniStatement(); // view mini statement
                     break;
                 case 5:
                     System.out.println("Collect your ATM Card\nThank you for using ATM Machine!!");
-                    System.exit(0);
+                    System.exit(0); // exit the program
                     break;
                 default:
                     System.out.println("Not a valid answer!");
