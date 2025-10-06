@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        AtmOperationInterf op = new AtmOpeartionImpl();
+        AtmOperationInterf op = new AtmOperationImpl();
         int atmNumber = 12345;
         int atmPin = 123;
         Scanner scanner = new Scanner(System.in);
@@ -21,14 +21,16 @@ public class Main {
         }
 
         while (true) {
-            System.out.println(
+            System.out.println("\n*************************");
+            System.out.print(
                     "1.View Available Balance\n" +
                     "2.Withdraw Amount\n" +
                     "3.Deposit Amount\n" +
                     "4.View MiniStatement\n" +
                     "5.Exit"
             );
-            System.out.println("Enter Choice : ");
+            System.out.println("\n*************************");
+            System.out.print("Enter Choice: ");
             int response = scanner.nextInt();
 
             switch (response) {
@@ -36,16 +38,20 @@ public class Main {
                     op.viewBalance();
                     break;
                 case 2:
-
+                    System.out.print("Enter Amount to Withdraw: ");
+                    double withdrawAmount = scanner.nextDouble();
+                    op.withDrawnAmount(withdrawAmount);
                     break;
                 case 3:
-
+                    System.out.print("Enter Amount to Deposit: ");
+                    double depositAmount = scanner.nextDouble();
+                    op.depositAmount(depositAmount);
                     break;
                 case 4:
 
                     break;
                 case 5:
-                    System.out.println("Collect your ATM Card\n Thank you for using ATM Machine!!");
+                    System.out.println("Collect your ATM Card\nThank you for using ATM Machine!!");
                     System.exit(0);
                     break;
                 default:
